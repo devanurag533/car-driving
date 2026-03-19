@@ -58,6 +58,19 @@ if st.session_state.logged_in:
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
+        # --- 📍 STEP 4: LIVE LOCATION MAP ---
+            st.subheader("🗺️ Real-time Vehicle Tracking")
+            
+            # Simulated GPS Coordinates (Patna, Bihar ke aas-paas)
+            lat = 25.5941 + random.uniform(-0.01, 0.01)
+            lon = 85.1376 + random.uniform(-0.01, 0.01)
+            
+            map_data = pd.DataFrame({'lat': [lat], 'lon': [lon]})
+            
+            # Streamlit ka in-built map
+            st.map(map_data, zoom=13)
+            
+            st.caption(f"📍 Current Coordinates: {lat:.4f}, {lon:.4f} | Status: Moving")
 
     st.title("🛰️ SmartCar Live Telematics")
     st.write(f"**Admin:** Anurag Kumar | **Security Status:** 🛡️ Z-Plus Encrypted")
