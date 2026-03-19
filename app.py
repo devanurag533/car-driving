@@ -117,7 +117,7 @@ if st.session_state.logged_in:
         # 3. Brake Failure Simulation
         if random.random() < 0.05: # 5% chance brake fail dikhane ki
             st.warning("🚨 SYSTEM ALERT: BRAKE PRESSURE LOW! CHECK VEHICLE.")
-                st.error(f"CRITICAL: Vehicle is running at {speed} km/h. Risk of Accident!")
+            st.error(f"CRITICAL: Vehicle is running at {speed} km/h. Risk of Accident!")
             
             if temp > 100:
                 st.warning("ENGINE WARNING: Cooling system failure suspected. Please check oil.")
