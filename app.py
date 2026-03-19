@@ -24,11 +24,11 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- 🔐 2. ADVANCED AUTH SYSTEM (Session Management) ---
+# --- 🔐 2. ADVANCED AUTH SYSTEM (Fixed Syntax) ---
 if 'page' not in st.session_state: st.session_state.page = "login"
 if 'owner_name' not in st.session_state: st.session_state.owner_name = "Anurag Kumar"
 if 'car_number' not in st.session_state: st.session_state.car_number = "BR-01-AK-2026"
-if 'pass' not in st.session_state: st.session_state.pass = "bihar123"
+if 'user_pass' not in st.session_state: st.session_state.user_pass = "bihar123" # 'pass' ko 'user_pass' kar diya
 
 # --- 🛡️ SECURITY BLOCKER (Right Click/F12) ---
 st.markdown("<script>document.addEventListener('contextmenu', e => e.preventDefault());</script>", unsafe_allow_html=True)
