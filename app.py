@@ -91,6 +91,32 @@ if st.session_state.logged_in:
             # Critical Alerts Logic
             if speed > 110:
                 st.toast("🚨 OVER-SPEEDING ALERT SENT TO OWNER!", icon="⚠️")
+            # --- 🚑 STEP 5: AI EMERGENCY RESPONSE SYSTEM (Is line 93 ke niche paste karein) ---
+        st.markdown("---")
+        st.subheader("🚨 SOS & Emergency Control")
+
+        # 1. Accident Detection Logic
+        if speed > 110:
+             st.error("⚠️ HIGH SPEED IMPACT RISK! Monitoring Sensors...")
+
+        # 2. Emergency Buttons
+        col_sos1, col_sos2 = st.columns(2)
+        
+        with col_sos1:
+            if st.button("🔴 REPORT ACCIDENT (SOS)"):
+                phone = "91XXXXXXXXXX" # Yahan malik ka number dalna
+                msg = f"EMERGENCY! Accident detected. Location: Patna. Speed was {speed}km/h."
+                st.markdown(f"[📲 WhatsApp Owner](https://wa.me/{phone}?text={msg})")
+                st.error("Alert Sent to Owner!")
+
+        with col_sos2:
+            if st.button("🚑 NEARBY AMBULANCE"):
+                search_url = "https://www.google.com/maps/search/hospital+near+me"
+                st.markdown(f"[🏥 Call Medical Help]({search_url})")
+
+        # 3. Brake Failure Simulation
+        if random.random() < 0.05: # 5% chance brake fail dikhane ki
+            st.warning("🚨 SYSTEM ALERT: BRAKE PRESSURE LOW! CHECK VEHICLE.")
                 st.error(f"CRITICAL: Vehicle is running at {speed} km/h. Risk of Accident!")
             
             if temp > 100:
